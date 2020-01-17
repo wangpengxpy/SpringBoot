@@ -57,7 +57,7 @@ public class UserController {
 
     @RequestMapping(value = "/getUsers", method = RequestMethod.GET)
     @ResponseBody
-    public PagedResult<User> getUsers(@RequestParam(defaultValue = "1") int offset,
+    public PagedResult<User> getUsers(@RequestParam(defaultValue = "0") int offset,
                                       @RequestParam(defaultValue = "10") int limit) {
 
         List<User> users = jdbcUserRepository.findAll();
