@@ -22,7 +22,7 @@
                 <div class="panel-title">Sign Up</div>
             </div>
             <div class="panel-body">
-                <form:form action="addUser" class="form-horizontal"
+                <form:form action="user" class="form-horizontal"
                            method="post" modelAttribute="user">
 
                     <div class="form-group">

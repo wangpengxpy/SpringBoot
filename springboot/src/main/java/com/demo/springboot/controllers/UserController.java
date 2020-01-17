@@ -40,9 +40,9 @@ public class UserController {
         return user;
     }
 
-    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
-    public String addUser(@Valid @ModelAttribute("user") User user, BindingResult theBindingResult) {
-        if (theBindingResult.hasErrors()) {
+    @RequestMapping(value = "/user", method = RequestMethod.POST)
+    public String user(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
             return "user";
         } else {
             jdbcUserRepository.save(user);
