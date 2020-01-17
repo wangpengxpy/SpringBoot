@@ -74,7 +74,7 @@ public class UserController {
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     @ResponseBody
-    public boolean delete(@PathVariable(value = "id", required = true) int id) {
+    public boolean delete(@PathVariable(value = "id") int id) {
         int result = jdbcUserRepository.deleteById(id);
         return result > 0;
     }
