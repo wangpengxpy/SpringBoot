@@ -1,7 +1,6 @@
 package com.demo.springboot.controllers;
 
 import com.demo.springboot.model.User;
-import com.demo.springboot.repositories.JdbcUserRepository;
 import com.demo.springboot.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,7 +12,10 @@ import org.springframework.web.bind.annotation.*;
 import util.PagedResult;
 
 import javax.validation.Valid;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Controller
