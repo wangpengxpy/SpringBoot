@@ -2,7 +2,9 @@ package com.demo.springboot.controllers;
 
 import com.demo.springboot.model.User;
 import com.demo.springboot.repositories.JdbcUserRepository;
+import com.demo.springboot.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -11,10 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import util.PagedResult;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Controller
@@ -29,7 +28,8 @@ public class UserController {
     }
 
     @Autowired
-    private JdbcUserRepository jdbcUserRepository;
+    @Qualifier("namedParameterJdbcUserRepository")
+    private UserRepository jdbcUserRepository;
 
     @ModelAttribute("user")
     @RequestMapping(value = "/user", method = RequestMethod.GET)

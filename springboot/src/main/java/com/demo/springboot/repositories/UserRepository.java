@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface UserRepository {
 
-    int save(User book);
+    int save(User user);
 
-    int update(User book);
+    int update(User user);
 
     int deleteById(int id);
 
